@@ -10,15 +10,12 @@ Todo está en `index.html`. Use **Buscar y reemplazar** (Ctrl+H) en todo el arch
 
 | Buscar | Reemplazar por | Dónde aparece |
 |---|---|---|
-| `href="#reservar"` | `href="https://...link-de-reservas..."` | Nav, hero, precios |
 | `href="#youtube"` | `href="https://www.youtube.com/@...canal..."` | Redes flotantes, En vivo, footer |
 | `href="#facebook"` | `href="https://www.facebook.com/...pagina..."` | Redes flotantes, footer |
 
-**Horario** — en el footer, busque `[hora]` y ponga las horas reales:
+**Horario** — en el footer, busque `Lunes a domingo` y cámbielo ahí mismo.
 
-```html
-<span>Lunes a viernes: 7:00 a.m. – 11:00 p.m.<br>Sábados y domingos: 8:00 a.m. – 10:00 p.m.</span>
-```
+**Reservas** — los 3 botones de reservar apuntan a futcinco.com. Si cambia el link, busque `futcinco.com/book` y reemplácelo.
 
 **Waze** — en el footer, busque `waze.com/ul?q=Futillo`. Lo más exacto es usar coordenadas:
 abra Futillo en Waze → Compartir → copiar link, o use

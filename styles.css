@@ -105,7 +105,7 @@ svg .fill { fill: currentColor; }
 
 .btn--white {
   align-self: flex-start; background: #fff; color: var(--azul);
-  border-radius: 10px; text-transform: none; letter-spacing: 0; font-size: 16px; min-height: 52px;
+  text-transform: none; letter-spacing: 0; font-size: 16px; min-height: 52px;
 }
 .btn--white:hover { background: var(--cal); color: var(--azul-hover); }
 
@@ -161,7 +161,7 @@ svg .fill { fill: currentColor; }
 .site-nav.is-scrolled .btn--nav,
 .site-nav.is-open .btn--nav {
   background: var(--azul); border-color: var(--azul); color: #fff;
-  border-radius: 10px; font-weight: 900;
+  font-weight: 900;
 }
 .site-nav.is-scrolled .btn--nav:hover,
 .site-nav.is-open .btn--nav:hover { background: var(--azul-hover); border-color: var(--azul-hover); }
@@ -183,7 +183,7 @@ svg .fill { fill: currentColor; }
 .site-nav.is-open .site-nav__toggle span:nth-child(2) { opacity: 0; }
 .site-nav.is-open .site-nav__toggle span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
-@media (max-width: 860px) {
+@media (max-width: 919px) {
   :root { --nav-h: 72px; }
   .site-nav__logo img { height: 32px; }
   .site-nav__toggle { display: flex; }
@@ -478,6 +478,7 @@ svg .fill { fill: currentColor; }
 
 @media (max-width: 600px) {
   .footer__cols { margin-left: 0; }
+  .footer__logo { margin-inline: auto; }
 }
 
 /* ---------- Movimiento reducido ---------- */
