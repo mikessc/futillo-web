@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Futillo — Juegue fútbol 5 en Hatillo</title>
+<meta name="description" content="Cancha sintética de fútbol 5 en Hatillo, Costa Rica. Ambiente sano y familiar, parqueo gratuito y transmisión de sus partidos.">
+<meta property="og:title" content="Futillo — Juegue fútbol 5 en Hatillo">
+<meta property="og:description" content="Cancha sintética de fútbol 5 en Hatillo, San José. Compartimos el deporte rey.">
+<meta property="og:image" content="https://futillo.com/assets/futillo-hero-cancha.jpg">
+<link rel="icon" href="assets/futillo-balon-azul.png">
+<meta property="og:locale" content="es_CR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Rancho&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!--
+  LINKS PENDIENTES (buscar y reemplazar):
+  #reservar  → link real de reservas (futcinco.com u otro)
+  #youtube   → canal de YouTube
+  #facebook  → página de Facebook
+  Waze y horario → en el footer
+-->
+
+<!-- Íconos de redes (glifos oficiales). Se usan con <svg><use href="#ico-..."/></svg> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ico-instagram" viewBox="0 0 24 24">
+    <rect x="2.2" y="2.2" width="19.6" height="19.6" rx="5.6" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <circle cx="12" cy="12" r="4.6" fill="none" stroke="currentColor" stroke-width="2.2"/>
+    <circle cx="17.6" cy="6.4" r="1.35" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="ico-facebook" viewBox="0 0 24 24">
+    <path fill="currentColor" stroke="none" d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/>
+  </symbol>
+  <!-- YouTube monocromo (blanco u oscuro según currentColor) -->
+  <symbol id="ico-youtube" viewBox="0 0 24 24">
+    <path fill="currentColor" stroke="none" fill-rule="evenodd" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </symbol>
+  <!-- YouTube a color oficial (rojo #FF0000 con triángulo blanco) -->
+  <symbol id="ico-youtube-color" viewBox="0 0 24 24">
+    <path fill="#FF0000" stroke="none" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
+    <path fill="#FFFFFF" stroke="none" d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </symbol>
+</svg>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- Redes flotantes: fijas a la derecha, se ocultan al llegar a la barra final del footer -->
+<aside class="social-float" id="social-float" aria-label="Redes sociales">
+  <a href="https://www.instagram.com/futillofut5" aria-label="Instagram"><svg aria-hidden="true"><use href="#ico-instagram"/></svg></a>
+  <a href="#facebook" aria-label="Facebook"><svg aria-hidden="true"><use href="#ico-facebook"/></svg></a>
+  <a href="#youtube" aria-label="YouTube"><svg aria-hidden="true"><use href="#ico-youtube"/></svg></a>
+</aside>
+
+<!-- ============ NAV (único) ============ -->
+<header class="site-nav" id="site-nav">
+  <div class="wrap site-nav__inner">
+    <a href="#inicio" class="site-nav__logo" aria-label="Futillo, inicio">
+      <img class="logo--white" src="assets/futillo-horizontal-white.png" alt="Futillo">
+      <img class="logo--color" src="assets/futillo-horizontal-color.png" alt="" aria-hidden="true">
+    </a>
+
+    <nav class="site-nav__menu" id="menu" aria-label="Principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#precios">Precios</a>
+      <a href="#sobre-futillo">Sobre Futillo</a>
+      <a href="#envivo">En vivo</a>
+      <a href="#reglamento">Reglamento</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="site-nav__actions">
+      <a href="#reservar" class="btn btn--nav">Reservar</a>
+      <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero__overlay">
+    <div class="wrap hero__inner">
+      <div class="hero__row">
+        <h1 class="hero__title">
+          <span class="hero__solid">Juegue</span>
+          <span class="hero__outline">Fútbol 5</span>
+        </h1>
+        <a href="#reservar" class="btn btn--lima btn--lg hero__cta">¡Reserve ahora!</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JUGADA 01 · INTRO ============ -->
+<section class="intro wrap">
+  <img class="intro__logo" src="assets/futillo-vertical-color.png" alt="Futillo — Compartimos el deporte rey">
+  <div class="intro__text">
+    <p class="eyebrow">Jugada 01 · Saque inicial</p>
+    <h2 class="title title--md">El mapache ya está en la cancha. <span class="accent">¿Y usted?</span></h2>
+    <p class="script">Fútbol 5 en Hatillo, de día o bajo las luces.</p>
+  </div>
+</section>
+
+<!-- ============ JUGADA 02 · PRECIOS ============ -->
+<section class="section section--green" id="precios">
+  <div class="wrap stack-xl">
+    <header class="section-head">
+      <p class="eyebrow eyebrow--light">Jugada 02 · El valor</p>
+      <h2 class="title">Precios</h2>
+    </header>
+
+    <div class="price-grid">
+      <article class="price-card">
+        <div class="price-card__value">
+          <p class="price-card__amount">₡20.000</p>
+          <p class="price-card__unit">x hora</p>
+        </div>
+        <div class="price-card__midline" aria-hidden="true"></div>
+        <h3 class="price-card__name">Cancha</h3>
+      </article>
+
+      <article class="price-card">
+        <div class="price-card__value">
+          <p class="price-card__amount">₡10.000</p>
+          <p class="price-card__unit">x hora</p>
+        </div>
+        <div class="price-card__midline" aria-hidden="true"></div>
+        <h3 class="price-card__name">Retos</h3>
+        <p class="price-card__note">Traer su propio rival</p>
+      </article>
+
+      <article class="price-card">
+        <div class="price-card__value">
+          <svg class="price-card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l5.5-13 7.5 7.5z"/><path d="M6.2 13.5l4.3 4.3M7.6 10.2l6.2 6.2"/><path d="M14 3.5c-.6 1.6.4 2.4 0 4M20.5 10c-1.6.6-2.4-.4-4 0M17 3l-.5 2M21 7l-2 .5"/></svg>
+        </div>
+        <div class="price-card__midline" aria-hidden="true"></div>
+        <h3 class="price-card__name">Fiestas y eventos</h3>
+        <p class="price-card__note price-card__note--bold">A convenir</p>
+      </article>
+    </div>
+
+    <div class="price-footer">
+      <a href="#reservar" class="btn btn--cal btn--lg">Reservar cancha</a>
+      <p>Enganche de <strong>₡5.000 por hora</strong> por SINPE Móvil al <strong>8471-3671</strong> para confirmar su reserva.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JUGADA 03 · SOBRE FUTILLO ============ -->
+<section class="section section--white" id="sobre-futillo">
+  <div class="wrap stack-lg">
+    <header class="section-head">
+      <p class="eyebrow">Jugada 03 · La cancha de casa</p>
+      <h2 class="title title--blue">Sobre Futillo</h2>
+    </header>
+
+    <div class="feature">
+      <img class="feature__img" src="assets/futillo-fachada.jpg" alt="Fachada de Futillo en Hatillo, con el mural de fauna y flora y el logo del mapache" loading="lazy" style="object-position:40% center">
+      <div class="feature__text">
+        <img class="feature__icon" src="assets/futillo-balon-azul.png" alt="" width="84" loading="lazy">
+        <h3 class="title title--sm title--blue">Ambiente sano y familiar</h3>
+        <p>Un espacio seguro en el centro de Hatillo para jugar con amigos, compañeros o la familia. Con parqueo gratuito, acceso cerrado con cámaras, gradería, camerino y áreas verdes donde antes había concreto.</p>
+      </div>
+    </div>
+
+    <div class="feature feature--reverse">
+      <img class="feature__img" src="assets/futillo-cancha-noche.jpg" alt="Partido nocturno en la cancha sintética de Futillo, con las luces encendidas" loading="lazy" style="object-position:45% center">
+      <div class="feature__text">
+        <img class="feature__icon" src="assets/futillo-ojo-verde.png" alt="" width="76" loading="lazy">
+        <h3 class="title title--sm title--green">Cancha sintética</h3>
+        <p>Césped sintético para fútbol 5, cuidado y listo para su mejenga en cualquier época del año. Juegue con tacos de suela lisa, turf o futsala; la cancha es al aire libre, así que si llueve, se juega igual.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <img class="feature__img" src="assets/futillo-mapache-pared.jpg" alt="Logo de Futillo con el mapache montado en una pared de concreto" loading="lazy">
+      <div class="feature__text">
+        <img class="feature__icon" src="assets/futillo-mapache-lima.png" alt="" width="120" loading="lazy">
+        <h3 class="title title--sm title--blue">¿Por qué un mapache?</h3>
+        <p>Es un animal que se adapta igual al campo que a la ciudad, y sale de noche: como quien llega a jugar después del trabajo. Sus orejas son las montañas que rodean el Valle Central, y en sus ojos se refleja una cancha de fútbol.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JUGADA 04 · EN VIVO ============ -->
+<section class="section section--blue" id="envivo">
+  <div class="wrap live">
+    <div class="live__text">
+      <p class="eyebrow eyebrow--light">Jugada 04 · La repetición</p>
+      <h2 class="title title--lg">Sus partidos, en vivo</h2>
+      <p>Transmisión gratuita de goles, jugadas y el partido completo por YouTube o desde esta página. Para mostrar ese golazo.</p>
+      <a href="#youtube" class="btn btn--white">
+        <svg class="ico-yt" aria-hidden="true"><use href="#ico-youtube-color"/></svg>
+        Ver canal en YouTube
+      </a>
+    </div>
+
+    <!-- Estado sin transmisión. Reemplazar por <iframe> de YouTube cuando haya live. -->
+    <div class="live__screen">
+      <svg class="live__pitch" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g><rect x="12" y="12" width="296" height="156" rx="2"/><line x1="160" y1="12" x2="160" y2="168"/><circle cx="160" cy="90" r="34"/><path d="M12,52 A40,40 0 0,1 12,128"/><path d="M308,52 A40,40 0 0,0 308,128"/></g></svg>
+      <span class="live__badge"><span class="dot"></span>Fuera del aire</span>
+      <svg class="live__icon" aria-hidden="true"><use href="#ico-youtube-color"/></svg>
+      <p class="live__title">Sin partidos en vivo en este momento</p>
+      <p class="live__sub">Vuelva más tarde o repase los últimos goles en nuestro canal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JUGADA 05 · SERVICIOS ============ -->
+<section class="section" id="servicios">
+  <div class="wrap stack-md">
+    <header class="section-head">
+      <p class="eyebrow">Jugada 05 · Tiempo extra</p>
+      <h2 class="title title--blue">Mucho más que solo una cancha</h2>
+    </header>
+
+    <div class="service-grid">
+      <article class="service-card">
+        <span class="service-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3.2 4M16 6h3a3 3 0 0 1-3.2 4"/><path d="M12 13v4M9 20h6M10 17h4v3h-4z"/></svg></span>
+        <h3>Torneos</h3>
+        <p>Organice el torneo de su empresa, su barrio o su grupo de amigos con nosotros.</p>
+      </article>
+      <article class="service-card">
+        <span class="service-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21v-8h14v8"/><path d="M5 16.5c1.5 1.2 3 1.2 4.7 0s3.2-1.2 4.6 0 3.2 1.2 4.7 0"/><path d="M12 13V9.5"/><path d="M12 7.2c.9-.8.9-1.9 0-3-.9 1.1-.9 2.2 0 3z"/></svg></span>
+        <h3>Cumpleaños</h3>
+        <p>Celebre con una mejenga: cancha, gradería y espacio para compartir con los invitados.</p>
+      </article>
+      <article class="service-card">
+        <span class="service-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l5.5-13 7.5 7.5z"/><path d="M6.2 13.5l4.3 4.3M7.6 10.2l6.2 6.2"/><path d="M14 3.5c-.6 1.6.4 2.4 0 4M20.5 10c-1.6.6-2.4-.4-4 0M17 3l-.5 2M21 7l-2 .5"/></svg></span>
+        <h3>Eventos</h3>
+        <p>Actividades de empresa, convivios y fiestas de fut, desde 3 horas.</p>
+      </article>
+      <article class="service-card">
+        <span class="service-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9.5 17V7h3.5a3 3 0 0 1 0 6H9.5"/></svg></span>
+        <h3>Amplio parqueo</h3>
+        <p>Gratis para clientes, con acceso cerrado, cámaras y seguridad.</p>
+      </article>
+      <article class="service-card">
+        <span class="service-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="11" rx="1"/><path d="M12 15v5M8 20h8"/><path d="M7 11l3-3 2.5 2.5L17 7"/></svg></span>
+        <h3>Talleres</h3>
+        <p>Espacios para aprender y compartir alrededor del deporte y la vida sana.</p>
+      </article>
+      <article class="service-card">
+        <span class="service-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3.5 2.5 8.5 2.5 12 0v-5"/><path d="M22 9v5"/></svg></span>
+        <h3>Cursos</h3>
+        <p>Clases y entrenamientos para mejorar su técnica y su condición física.</p>
+      </article>
+      <article class="service-card">
+        <span class="service-card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6.5" cy="4.5" r="1.6"/><path d="M4.5 8h4v6h-1v6h-2v-6h-1z"/><path d="M12 3v18"/><circle cx="17.5" cy="4.5" r="1.6"/><path d="M17.5 8l3 7h-2v5h-2v-5h-2z"/></svg></span>
+        <h3>Servicio sanitario</h3>
+        <p>Baños y camerino para cambiarse antes y después del partido.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JUGADA 06 · REGLAMENTO ============ -->
+<section class="section section--white section--ruled" id="reglamento">
+  <div class="wrap stack-md">
+    <header class="section-head">
+      <p class="eyebrow">Jugada 06 · El silbato</p>
+      <h2 class="title title--blue">Reglamento</h2>
+    </header>
+
+    <div class="rules">
+      <div class="rules__block">
+        <h3>En la cancha</h3>
+        <ol>
+          <li>Use calzado apto para cancha sintética, futsal o fútbol 5: tenis de suela lisa, tenis de taquillos (turf) o tacos de taquillo bajo. No se permite calzado que pueda dañar la grama, lesionar a otros jugadores o dañar las instalaciones.</li>
+          <li>Le agradecemos evitar las actitudes violentas y el lenguaje soez; no van con el ambiente de Futillo.</li>
+          <li>Espacio libre de humo de tabaco.</li>
+          <li>Fuera de la cancha hay espectadores, otros clientes, peatones, construcciones, vehículos y plantas ornamentales. No se permite jugar fuera del perímetro de la cancha; quien lo haga asume los riesgos.</li>
+          <li>Los responsables de menores de edad y de mascotas deben cuidarlos y responder por sus actos.</li>
+          <li>¡Gracias por su puntualidad!</li>
+        </ol>
+      </div>
+      <div class="rules__block">
+        <h3>Reservaciones</h3>
+        <ol>
+          <li>Llene el formulario de reservaciones en este sitio, eligiendo la fecha y la hora que desea.</li>
+          <li>Revise el comprobante en el correo que indicó y confirme fecha y hora. Si no coinciden, avísenos al 8471-3671.</li>
+          <li>Pague el enganche por SINPE Móvil: ₡5.000 por cada hora reservada, al 8471-3671.</li>
+          <li>Tiene un tiempo limitado, desde que completa la reserva, para hacer el SINPE. Si no recibimos el depósito, podemos anular la reserva para liberar el espacio y tendrá que llenar el formulario de nuevo.</li>
+          <li>Le recomendamos (no es obligatorio) enviar el comprobante del SINPE a nuestro WhatsApp oficial, al mismo número.</li>
+          <li>Considere la posibilidad de lluvia: la cancha no es techada, y una ausencia de último momento por ese motivo no se acepta como justificación.</li>
+          <li>Futillo puede negar el acceso por ausencias constantes.</li>
+          <li>Desde el 31 de agosto de 2025, Futillo no organiza retos. ¡Gracias por su comprensión!</li>
+          <li>El enganche se devuelve completo solo al titular de la cuenta que hizo el depósito, por SINPE Móvil, y solo si la anulación se pide con al menos 48 horas de antelación.</li>
+        </ol>
+      </div>
+      <div class="rules__block">
+        <h3>Parqueo</h3>
+        <ol>
+          <li>El parqueo no tiene costo adicional para nuestros clientes.</li>
+          <li>La velocidad máxima dentro de las instalaciones es de 10 km/h. No se permiten las actitudes temerarias.</li>
+          <li>La capacidad total del parqueo para la cancha de fútbol 5 es de 12 espacios.</li>
+          <li>El acceso principal normalmente se mantiene cerrado, y contamos con circuito cerrado de cámaras y sistema de vigilancia. La seguridad es prioridad en Futillo.</li>
+        </ol>
+      </div>
+      <div class="rules__block">
+        <h3>Áreas conexas</h3>
+        <p class="rules__sub">Gradería, camerino y jardines</p>
+        <ol>
+          <li>¡Gracias por hacer un uso racional del agua!</li>
+          <li>Por favor, deposite los desechos en su lugar.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contacto">
+  <div class="footer__stripes">
+    <div class="wrap footer__inner">
+      <a href="#inicio" class="footer__logo" aria-label="Futillo, inicio">
+        <img src="assets/futillo-vertical-white.png" alt="Futillo — Compartimos el deporte rey" loading="lazy">
+      </a>
+
+      <div class="footer__cols">
+        <nav class="footer__col" aria-label="Pie de página">
+          <h2>Menú</h2>
+          <a href="#inicio">Inicio</a>
+          <a href="#precios">Precios</a>
+          <a href="#sobre-futillo">Sobre Futillo</a>
+          <a href="#envivo">En vivo</a>
+          <a href="#reglamento">Reglamento</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="footer__col footer__col--contact">
+          <h2>Contacto</h2>
+          <a href="mailto:admi@futillo.com" class="icon-row"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>admi@futillo.com</a>
+          <a href="https://wa.me/50684713671" class="icon-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.2 19z"/><path d="M9.5 9.5c.3 1.8 2.2 3.8 4 4.2l1.2-1.2 1.8.9-.4 1.6c-3.4.2-7.3-3.6-7.2-7.1l1.6-.4.9 1.8z"/></svg>8471-3671</a>
+          <p class="icon-row"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>50 m este de la Pacífica Fernández, Hatillo, Costa Rica</span></p>
+          <p class="icon-row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Lunes a viernes: [hora] – [hora]<br>Sábados y domingos: [hora] – [hora]</span></p>
+          <a href="https://www.waze.com/ul?q=Futillo%20Hatillo&navigate=yes" class="icon-row footer__waze"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3L3 10.5l7.5 3 3 7.5z"/></svg>Abrir en Waze →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bar">
+    <div class="wrap footer__bar-inner">
+      <span>© 2026 · Futillo</span>
+      <div class="social">
+        <a href="https://www.instagram.com/futillofut5" aria-label="Instagram"><svg aria-hidden="true"><use href="#ico-instagram"/></svg></a>
+        <a href="#facebook" aria-label="Facebook"><svg aria-hidden="true"><use href="#ico-facebook"/></svg></a>
+        <a href="#youtube" aria-label="YouTube"><svg aria-hidden="true"><use href="#ico-youtube"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Futillo — nav y menú móvil
+(function () {
+  var nav = document.getElementById('site-nav');
+  var toggle = nav.querySelector('.site-nav__toggle');
+  var menu = document.getElementById('menu');
+  var THRESHOLD = 40; // px de scroll para pasar de transparente a blanco
+
+  // 1. Nav: transparente arriba, blanco al hacer scroll
+  function onScroll() {
+    nav.classList.toggle('is-scrolled', window.scrollY > THRESHOLD);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // 2. Redes flotantes: se ocultan cuando aparece la barra final del footer
+  var social = document.getElementById('social-float');
+  var footerBar = document.querySelector('.footer__bar');
+  if (social && footerBar && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      social.classList.toggle('is-hidden', entries[0].isIntersecting);
+    }).observe(footerBar);
+  }
+
+  // 3. Menú hamburguesa
+  function setOpen(open) {
+    nav.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  }
+  toggle.addEventListener('click', function () {
+    setOpen(!nav.classList.contains('is-open'));
+  });
+  // Cerrar al elegir un link, con Escape o al pasar a escritorio
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  window.matchMedia('(min-width: 861px)').addEventListener('change', function (e) {
+    if (e.matches) setOpen(false);
+  });
+})();
+</script>
+</body>
+</html>
