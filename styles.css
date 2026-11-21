@@ -436,6 +436,7 @@ svg .fill { fill: currentColor; }
 .service-card__icon svg { width: 28px; height: 28px; stroke-width: 1.8; }
 .service-card h3 { margin: 0; font-weight: 800; font-size: 22px; }
 .service-card p { font-size: 15px; line-height: 1.5; color: var(--tinta-suave); }
+.services-cta { align-self: center; }
 
 /* ---------- Jugada 06 · Reglamento ---------- */
 .rules {

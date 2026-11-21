@@ -4,14 +4,11 @@ Sitio estático (HTML + CSS, sin build) publicado con GitHub Pages en https://fu
 
 Para ver cambios: edite `index.html` o `styles.css`, haga commit y push a `main`. GitHub Pages lo publica en uno o dos minutos.
 
-## Links pendientes
+## Cambiar links y datos
 
-Todo está en `index.html`. Use **Buscar y reemplazar** (Ctrl+H) en todo el archivo:
+Todo está en `index.html`. Use **Buscar y reemplazar** (Ctrl+H) en todo el archivo.
 
-| Buscar | Reemplazar por | Dónde aparece |
-|---|---|---|
-| `href="#youtube"` | `href="https://www.youtube.com/@...canal..."` | Redes flotantes, En vivo, footer |
-| `href="#facebook"` | `href="https://www.facebook.com/...pagina..."` | Redes flotantes, footer |
+**Redes** — Instagram, Facebook y YouTube aparecen dos veces (redes flotantes y footer), y YouTube también en "En vivo". Para cambiar uno, busque su dirección actual y reemplácela.
 
 **Horario** — en el footer, busque `Lunes a domingo` y cámbielo ahí mismo.
 
